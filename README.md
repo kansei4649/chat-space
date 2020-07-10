@@ -34,6 +34,7 @@ Things you may want to cover:
 |password|string|null: false|
 ### Association
 - has_many :posts
+- has_many :groups, through:  :groups_users
 
 ## groups_usersテーブル
 
@@ -58,6 +59,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+- has_many :users, through:  :groups_users
 
 ## postsテーブル
 |Column|Type|Options|

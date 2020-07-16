@@ -1,3 +1,61 @@
 * {
   box-sizing: border-box;
 }
+
+.wrapper {
+  display: flex;
+}
+
+.chat-side {
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+  &__header {
+    height:100px;
+    background-color:#253141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__side-box {
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      &__user-name {
+        color: #ffffff;
+      }
+      &__icon {
+        width: 60px;
+        text-align: right;
+        align-items: center;
+        &__edit {
+          color: #ffffff;
+          margin-right: 5px;
+        }
+        &__cog {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.chat-main{
+  width: calc(100vw - 300px);
+  height:500px;
+  background-color: red;
+  &__header {
+    height: 100px;
+    background-color: #ffffff;
+    border: #eeeeee;
+  }
+  &__main {
+    height: calc(100vh - 100px - 90px);
+    background-color: #fafafa;
+  }
+  &__message {
+    height: 90px;
+    background-color: #d2d2d2;
+  }
+}

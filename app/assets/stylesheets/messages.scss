@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+}
+
+.chat-side {
+  width: 300px;
+  background-color: #253141;
+}
+
+.chat-main{
+  width: 100vh - 300px;
+  background-color: #ffffff;
+}

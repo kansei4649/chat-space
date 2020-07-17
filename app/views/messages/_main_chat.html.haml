@@ -1,0 +1,28 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__group-list
+      <ゴリラ>
+      .chat-main__header__group-list__member
+        "neko" "panda"
+    .chat-main__header__edit
+      = link_to "#", class: "chat-main__header__edit-btn" do
+        Edit
+  .chat-main__main
+    .chat-main__main__box
+      .chat-main__main__box__info
+        .chat-main__main__box__info__menber-name
+          shimauma
+        .chat-main__main__box__info__date
+          2020年07月16日 17時36分
+      .chat-main__main__box__message
+        %p.main__main__box__message__content
+          ringo
+
+  .chat-main__message
+    %form.message-form
+      .message-form__content
+        %input.message-form__content__box{type: 'text', placeholder: 'type a message'}
+        %label.message-form__content__img
+          = icon('far', 'image', class: 'message-form__content__img__icon')
+          %input.Hidden{type: 'file'}
+      %input.message-form__submit{type: 'submit', value: 'Send'}

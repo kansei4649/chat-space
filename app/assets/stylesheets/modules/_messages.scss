@@ -119,9 +119,46 @@ a{
       }
     }
   }
-
   &__message {
     height: 90px;
+    padding: 20px 40px 20px 50px;
+    box-sizing: border-box;
     background-color: #d2d2d2;
+    display: flex;
+    justify-content: space-between;
+    form {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .message-form__content {
+        width: 100%;
+        position: relative;
+        background-color: #fff;
+        &__box {
+          height: 50px;
+          border: none;
+          padding: 0px 45px 0px 15px;
+          width: 100%;
+        }
+        &__img {
+          line-height: 50px;
+          right: 10px;
+          font-size: 25px;
+          position: absolute;
+        }
+      }
+      .message-form__submit {
+        background-color: #38AEF0;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
   }
+}
+.Hidden {
+  display: none;
 }

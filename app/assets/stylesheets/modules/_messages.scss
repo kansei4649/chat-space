@@ -48,14 +48,22 @@
       color: #ffffff;
       font-weight: bold;
     }
-    &__messeage {
+    &__message {
       margin-bottom: 40px;
+      font-size: 11px;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    &__name {
       font-size: 11px;
       color: #ffffff;
       font-weight: bold;
     }
   }
 }
+  a{
+    text-decoration: none;
+  }
 
 
 .chat-main{

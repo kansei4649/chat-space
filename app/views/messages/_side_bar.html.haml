@@ -13,8 +13,8 @@
   .chat-side__main
     - current_user.groups.each do |group|
       .chat-side__main__group
-        = link_to edit_group_path(group), class: "chat-side__main__group" do
+        = link_to group_messages_path(group), class: "chat-side__main__group" do
           .chat-side__main__name
             = group.name
           .chat-side__main__message
-            メッセージはまだありません
+            = group.show_last_message

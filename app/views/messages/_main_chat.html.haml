@@ -1,11 +1,13 @@
 .chat-main
   .chat-main__header
     .chat-main__header__group-list
-      <ゴリラ>
+      = @group.name
       .chat-main__header__group-list__member
-        "neko" "panda"
+        - @group.users.each do |group|
+          member : 
+          = group.name
     .chat-main__header__edit
-      = link_to "#", class: "chat-main__header__edit-btn" do
+      = link_to edit_group_path(@group.id), class: "chat-main__header__edit-btn" do
         Edit
   .chat-main__main
     .chat-main__main__box
@@ -17,12 +19,14 @@
       .chat-main__main__box__message
         %p.main__main__box__message__content
           ringo
+    .MessageField
+      = render @messages
 
   .chat-main__message
-    %form.message-form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .message-form__content
-        %input.message-form__content__box{type: 'text', placeholder: 'type a message'}
-        %label.message-form__content__img
-          = icon('far', 'image', class: 'message-form__content__img__icon')
-          %input.Hidden{type: 'file'}
-      %input.message-form__submit{type: 'submit', value: 'Send'}
+        = f.text_field :content, class: 'message-form__content__box', placeholder: 'type a message'
+        = f.label :image, class: 'message-form__content__img__icon' do
+          = icon('far', 'image', class: 'message-form__content__img')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'message-form__submit'

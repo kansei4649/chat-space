@@ -99,15 +99,16 @@ a{
   text-decoration: none;
 
 }
-  &__main {
+  .MessageField {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 35px 40px;
-    &__box {
+    overflow: scroll;
+    .MessageBox {
       margin-bottom: 46px;
-      &__info {
+      .MessageInfo {
         display: flex;
-        &__menber-name {
+        &__userName {
           font-size: 16px;
           color: #333333;
           font-weight: bold;
@@ -118,7 +119,7 @@ a{
           margin-left: 10px;
         }
       }
-      &__message {
+      .Message {
         margin-top: 12px;
         &__content {
           font-size: 14px;

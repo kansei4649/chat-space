@@ -9,18 +9,8 @@
     .chat-main__header__edit
       = link_to edit_group_path(@group.id), class: "chat-main__header__edit-btn" do
         Edit
-  .chat-main__main
-    .chat-main__main__box
-      .chat-main__main__box__info
-        .chat-main__main__box__info__menber-name
-          shimauma
-        .chat-main__main__box__info__date
-          2020年07月16日 17時36分
-      .chat-main__main__box__message
-        %p.main__main__box__message__content
-          ringo
-    .MessageField
-      = render @messages
+  .MessageField
+    = render @messages
 
   .chat-main__message
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|

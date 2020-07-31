@@ -44,34 +44,3 @@ end
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 end
-
-
-
-upstream app_server {
-  server unix:/var/www/chat-space/shared/tmp/sockets/unicorn.sock;
-}
-
-server {
-  listen 80;
-  server_name 18.180.19.47;
-
-  root /var/www/chat-space/current/public;
-
-  location ^~ /assets/ {
-    gzip_static on;
-    expires max;
-    add_header Cache-Control public;
-    root   /var/www/chat-space/current/public;
-  }
-
-  try_files $uri/index.html $uri @unicorn;
-
-  location @unicorn {
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $http_host;
-    proxy_redirect off;
-    proxy_pass http://app_server;
-  }
-
-  error_page 500 502 503 504 /500.html;
-}
